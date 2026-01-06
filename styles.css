@@ -1,7 +1,7 @@
 :root {
-  --green-dark: #0b5d1e;
+  --green-dark: #064615;
   --green-light: #7cc47f;
-  --yellow: #f2c400;
+  --yellow: #ffd000;
   --yellow-soft: rgba(242,196,0,0.18);
   --blue: #0b3a8f;
   --white: #ffffff;
@@ -143,16 +143,17 @@ body {
   border-radius: 18px;
   padding: 28px;
   margin-bottom: 30px;
+  height: 260px;
 
   display: grid;
   grid-template-columns: 90px 20px 1fr;
   gap: 24px;
 
-  border: 3px dashed #cfe4d3;
+  border: 3px dashed rgba(11, 58, 143, 0.5);
   overflow: hidden;
 
   box-shadow:
-    0 14px 30px rgba(0,0,0,0.18),
+    0 20px 30px rgba(0,0,0,0.18),
     0 0 0 2px rgba(242,196,0,0.12);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -191,13 +192,17 @@ body {
 }
 
 .month-label {
-  font-size: 48px;
+  display: flex;
+  align-items: center;   
+  justify-content: center;
+  font-size: 60px;
   font-weight: 800;
   color: var(--blue);
 }
 
 .timeline-col {
   position: relative;
+  height: 100%;
 }
 
 .timeline-line {
@@ -210,10 +215,40 @@ body {
   background: var(--blue);
 }
 
+.events {
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.events {
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) rgba(11,58,143,0.1);
+}
+
+.events::-webkit-scrollbar {
+  width: 6px;
+}
+
+.events::-webkit-scrollbar-track {
+  background: rgba(11,58,143,0.1);
+  border-radius: 10px;
+}
+
+.events::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border-radius: 10px;
+}
+
+.events::-webkit-scrollbar-thumb:hover {
+  background: #e0b200;
+}
+
 .events ul {
   margin: 0;
   padding-left: 18px;
-}
+} 
 
 .events li {
   font-size: 17px;
